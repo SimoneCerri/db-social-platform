@@ -1,5 +1,5 @@
 1. Seleziona tutti gli utenti e calcolane l'età (25)
-    - 
+    - SELECT FLOOR(DATEDIFF(CURDATE(), birthdate) / 365) AS age FROM users
 2. Seleziona tutti i post senza Like (13)
     - 
 3. Conta il numero di like per ogni post (165)
