@@ -9,14 +9,14 @@
 5. Ordina gli utenti per totale di likes ricevuti nei loro posts (25)
     - SELECT users.id,users.username,COUNT(likes.post_id) AS total_likes FROM users LEFT JOIN posts ON users.id = posts.user_id LEFT JOIN likes ON posts.id = likes.post_id GROUP BY users.id users.username ORDER BY total_likes DESC
 6. Seleziona tutti i post degli utenti tra i 20 e i 30 anni (49)
-    - 
+    - SELECT * FROM posts JOIN users ON posts.user_id = users.id WHERE TIMESTAMPDIFF(YEAR, users.birthdate, CURDATE()) BETWEEN 20 AND 30
 7. Seleziona il numero di post e di media per ogni utente (25)
-    - 
+    - SELECT users.id,users.username,COUNT(DISTINCT posts.id) AS post_count,COUNT(DISTINCT medias.id) AS media_count FROM users LEFT JOIN posts ON users.id = posts.user_id LEFT JOIN medias ON users.id = medias.user_id GROUP BY users.id, users.username;
 
 BONUS
 8. Seleziona tutti i post che contengono il tag 'serata' (8)
-    - 
+    - SELECT * FROM posts WHERE JSON_CONTAINS(tags, '"serata"')
 9. Ordina i post in base al numero di tag (165)
-    - 
+    - SELECT * FROM posts ORDER BY JSON_LENGTH(tags) ASC
 10. Ordina gli utenti in base al numero di tag usati nei loro post (25)
     - 
