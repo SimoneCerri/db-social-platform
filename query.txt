@@ -19,4 +19,4 @@ BONUS
 9. Ordina i post in base al numero di tag (165)
     - SELECT * FROM posts ORDER BY JSON_LENGTH(tags) ASC
 10. Ordina gli utenti in base al numero di tag usati nei loro post (25)
-    - 
+    - SELECT * FROM posts ORDER BY JSON_LENGTH(tags) ASC;
